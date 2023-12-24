@@ -1,7 +1,6 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 import Row from "react-bootstrap/Row";
-import Rating from "./Rating";
 
 const MovieListe = (props) => {
   const { movies, title, rate } = props;
@@ -20,8 +19,8 @@ const MovieListe = (props) => {
       {movies
         .filter(
           (element) =>
-            element.title.toLowerCase().includes(title.toLowerCase().trim()) ||
-            element.rate === Rating
+            element.title.toLowerCase().includes(title.toLowerCase().trim()) &&
+            element.rating === rate
         )
         .map((element) => (
           <MovieCard movie={element} key={element.id} />

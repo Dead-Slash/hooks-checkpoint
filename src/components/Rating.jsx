@@ -4,14 +4,14 @@ const Rating = (props) => {
   const { rate, setRate } = props;
   const stars = (star) => {
     const starTab = [];
-    for (let i = 0; i <= 5; i++) {
-      if (i <= star) {
+    for (let i = 0; i < 5; i++) {
+      if (i < star) {
         starTab.push(
           <span
             key={i}
             className="fs-2"
             style={style}
-            onClick={() => setRate(i)}
+            onClick={() => setRate(i + 1)}
           >
             &#9733;
           </span>
@@ -22,7 +22,7 @@ const Rating = (props) => {
             key={i}
             className="fs-2"
             style={style}
-            onClick={() => setRate(i)}
+            onClick={() => setRate(i + 1)}
           >
             &#9734;
           </span>
@@ -41,7 +41,7 @@ Rating.defaultProps = {
 const style = {
   color: "rgb(245,164, 66)",
   pointer: "pointer",
-  marginLeft: 24,
+  marginLeft: 30,
 };
 
 export default Rating;
